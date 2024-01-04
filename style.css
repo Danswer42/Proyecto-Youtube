@@ -6,7 +6,7 @@
   color: #ffffff;
   font-family: "Roboto", sans-serif;
 }
-/*
+
 .animacion{
   height: 100%;
   width: 100%;
@@ -33,7 +33,7 @@
     opacity: 0;
     z-index: -1;
   }
-}*/
+}
 
 body {
   background-color: #212121;
