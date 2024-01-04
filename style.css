@@ -35,10 +35,11 @@
   }
 }*/
 
-.container {
+body {
   background-color: #212121;
-  display: grid;
-  grid-template-columns: 1fr;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .bar-nav-high {
@@ -83,7 +84,7 @@
 
 .bar-nav-mid {
   height: 48px;
-  width: 375px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -144,15 +145,21 @@
   gap: 25px;
   fill: #ffffff;
   font-size: 11px;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   background-color: #212121;
 }
+
 
 .bar-nav-pivot .pivot{
   display: grid;
   justify-items: center;
 }
+
+.bar-nav-pivot .tres{
+  display: none;
+}
+
 
 .bar-nav-pivot .esvigi {
   display: flex;
@@ -160,6 +167,8 @@
   height: 24px;
   width: 24px;
 }
+
+
 
 .bar-nav-pivot .pivot a{
   text-decoration: none;
@@ -176,7 +185,7 @@
 .main .miniatura img{
   display: grid;
   justify-items: center;
-  width: 375px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -223,7 +232,7 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .container {
+  body {
     background-color: #212121;
     display: grid;
     grid-template-columns: 1fr;
@@ -328,7 +337,7 @@
     gap: 25px;
     fill: #ffffff;
     font-size: 11px;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     background-color: #212121;
   }
@@ -336,6 +345,10 @@
   .bar-nav-pivot .pivot{
     display: grid;
     justify-items: center;
+  }
+
+  .bar-nav-pivot .tres{
+    display: none;
   }
   
   .bar-nav-pivot .esvigi {
@@ -413,14 +426,20 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .container {
-    background-color: #212121
+  body {
+    background-color: #212121;
+    margin: 0px;
+    padding: 0px;
   }
   
   .bar-nav-high {
+    background-color:#212121;
     display: flex;
     align-items: center;
-    border-bottom: #818080 1px solid;
+    border: none;
+    position: fixed;
+    width: 100%;
+    height: 56px;
   }
   
   .bar-nav-high .logo-de-youtube {
@@ -439,7 +458,6 @@
   }
   
   .bar-nav-high .search {
-   
     height: 48px;
     display: flex;
     align-items: center;
@@ -458,12 +476,16 @@
   }
   
   .bar-nav-mid {
+    background-color: #212121;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border-bottom: #818080 1px solid;
+    border: none;
     gap: 25px;
+    position: fixed;
+    top: 40px;
+    width: 100%;
   }
   
   .bar-nav-mid .chip {
@@ -506,41 +528,57 @@
   }
   
   .bar-nav-pivot {
-    height: 48px;
+    height: 100vh;
+    width: 200px;
+    display: flex; 
+    align-items: stretch;
+    flex-direction: column;
+    fill: #ffffff;
+    font-size: 14px;
+    position: fixed;
+    top: 40px;
+    border: none;
+    padding: 15px;
+  }
+
+  .bar-nav-pivot .pivot{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    border-top: #818080 1px solid;
-    gap: 25px;
-    fill: #ffffff;
-    font-size: 11px;
-    position: sticky;
-    top: 0;
-    background-color: #212121;
-  }
-  
-  .bar-nav-pivot .pivot{
-    display: grid;
-    justify-items: center;
-  }
-  
+    gap: 10px;
+    padding: 0px 12px;
+
+  }  
+
   .bar-nav-pivot .esvigi {
     display: flex;
     align-items: center;
     height: 24px;
     width: 24px;
   }
-  
+
+  .bar-nav-pivot .pivot:first-child{
+    background-color: #818080;
+    border-radius: 5px;
+    padding: 10px;
+  } 
+
   .bar-nav-pivot .pivot a{
     text-decoration: none;
   }
+  
+  .bar-nav-pivot .tres span{
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 6px 12px 4px;
+  }
 
   .main{
-    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    height: auto;
+    padding: 24px;
+    margin-top: 100px;
+    margin-left: 220px;
+    width: 1200px;
   }
 
   .main .videos{
@@ -550,7 +588,8 @@
   .main .miniatura img{
     display: grid;
     justify-items: center;
-    width: 350px;
+    width: 373px;
+    border-radius: 5px;
   }
   
   .main .especificaciones{
