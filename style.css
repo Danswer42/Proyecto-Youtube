@@ -528,7 +528,7 @@ body {
   }
   
   .bar-nav-pivot {
-    height: 98vh;
+    height: 97vh;
     width: 150px;
     display: flex; 
     align-items: stretch;
@@ -577,6 +577,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     padding: 24px;
     margin-top: 100px;
+    margin-left: 200px;
     width: 1200px;
   }
 
